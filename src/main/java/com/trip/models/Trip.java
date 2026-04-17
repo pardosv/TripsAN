@@ -3,7 +3,7 @@ package com.trip.models;
 import java.util.Date;
 
 public class Trip {
-
+	
 	private Integer id;
 	private String nomTrip;
 	private String descripcion;
@@ -13,6 +13,10 @@ public class Trip {
 	private String detalles;
 	private boolean activo;
 	private Date fecha;
+	private Integer idCategoria;
+	private Integer destacado;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -67,6 +71,19 @@ public class Trip {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+	public Integer getDestacado() {
+		return destacado;
+	}
+	public void setDestacado(Integer destacado) {
+		this.destacado = destacado;
+	}
 	
 	
 }
+	
