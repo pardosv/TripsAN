@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Roles</title>
+</head>
+<body>
+
+<h2>Lista de Roles</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Fecha Creación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="rol : ${roles}">
+            <td th:text="${rol.id}"></td>
+            <td th:text="${rol.nombre}"></td>
+            <td th:text="${rol.descripcion}"></td>
+            <td th:text="${rol.estado ? 'Activo' : 'Inactivo'}"></td>
+            <td th:text="${rol.fechaCreacion}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
