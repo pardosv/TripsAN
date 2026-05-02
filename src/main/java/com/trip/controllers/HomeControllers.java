@@ -6,17 +6,20 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.trip.models.Trip;
+import com.trip.services.ITripServices;
 
 
 @Controller
-
 public class HomeControllers {
 	
+	@Autowired
+	private ITripServices tripService;
 	
 	@GetMapping("/")
 	public String mostrarHome (Model model) {
@@ -36,7 +39,8 @@ public class HomeControllers {
 	
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
-	    List<Trip> lista = getTrips();
+		
+	    List<Trip> lista = tripService.buscarTodo();
 	    model.addAttribute("trips", lista);
 	    return "tabla";
 	}
